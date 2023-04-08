@@ -12,7 +12,7 @@ function Time() {
    d=new Date();
    let hours=d.getHours();
    let duration = hours >= 12 ? 'pm' : 'am';
-  hours = (hours % 12) || 12;
+  hours = (hours % 12) ;
    setHour(hours);
    setMinute(d.getMinutes());
    setSecond(d.getSeconds());
