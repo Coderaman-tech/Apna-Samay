@@ -5,6 +5,7 @@ import Home from  './components/Home';
 import Loader from "./components/Loader";
 import Layout from "./components/Layout";
 
+
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ function App() {
         loading===true ? <Loader/>: 
         <>
         <Navbar/>
+        
         <Layout>
     
       <Routes>
