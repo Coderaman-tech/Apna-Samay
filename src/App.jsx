@@ -9,7 +9,24 @@ import Layout from "./components/Layout";
 function App() {
 
   const [loading, setLoading] = useState(true);
+    const [mode, setMode] = useState('light')
+    const [modeText, setModeText] = useState('Dark Mode');
 
+    function toggleMode(){
+        if(mode==='light'){
+            setMode('dark');
+            setModeText('Light Mode');
+            document.body.style.backgroundColor='black';
+            document.body.style.color='white';
+        }
+        else{
+          setMode('light');
+          setModeText('Dark Mode');
+          document.body.style.backgroundColor='white';
+          document.body.style.color='black';
+
+        }
+    }
   useEffect(function(){
     setTimeout(function(){
       setLoading(false);
@@ -21,7 +38,7 @@ function App() {
       {
         loading===true ? <Loader/>: 
         <>
-        <Navbar/>
+        <Navbar mode={mode} modeText={modeText} toggleMode={toggleMode}/>
         
         <Layout>
     

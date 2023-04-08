@@ -1,16 +1,13 @@
 import React from 'react'
-import { GrAdd } from 'react-icons/gr';
+import { GoPlus} from 'react-icons/go';
 
 function Alarm() {
   return (
-    <div>
+    <div className='m-x-5'>
       <h1 className='text-5xl text-sky-600 '>Alarm</h1>
       <h3 className=''> Lets go for a
 
-        <GrAdd Close
-          className="icon"
-          size="50px"
-          color="white" />
+        <GoPlus className="icon" size="30px" color='black' />
 
       </h3>
     </div>

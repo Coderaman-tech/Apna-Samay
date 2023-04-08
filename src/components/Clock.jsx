@@ -22,8 +22,8 @@ function Time() {
   return (
     <div>
       <h1 className='text-sky-600 text-5xl c-slate-500'>Digital Clock</h1>
-      <h2 className='text-4xl m-9' >{hour}:{minute}:{second}  {AmOrPm}</h2>
-
+      <h2 className='text-4xl m-9 dark:text-white' >{hour}:{minute}:{second}  {AmOrPm}</h2>
+      
     </div>
   )
 }
