@@ -12,7 +12,7 @@ function Home() {
           <Clock/>
           
     </div>
-    <div className='m-4'>
+    <div className='m-4' style={{border:'0'}} >
           <Alarm/>
     </div> 
 
