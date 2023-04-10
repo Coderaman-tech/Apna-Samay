@@ -1,21 +1,25 @@
 import React from 'react'
 import { useState } from 'react';
 
-function Time() {
-  const [hour, setHour] = useState(0);
+let hour1=0,minutes1=0;
+
+function Clock() {
+  const[hour, setHour] = useState(0);
   const [minute, setMinute] = useState(0);
   const [second, setSecond] = useState(0);
   const [AmOrPm, setAmOrPm] = useState(second)
- let d;
-
+  let d;
+  
   setInterval(() => {
    d=new Date();
    let hours=d.getHours();
    let duration = hours >= 12 ? 'pm' : 'am';
-  hours = (hours % 12) ;
+   hours = (hours % 12) ;
    setHour(hours);
    setMinute(d.getMinutes());
    setSecond(d.getSeconds());
+   hour1=hour;
+   minutes1=minute;
    setAmOrPm(duration);
   }, 1000);
 
@@ -23,9 +27,11 @@ function Time() {
     <div>
       <h1 className='text-sky-600 text-5xl c-slate-500'>Digital Clock</h1>
       <h2 className='text-4xl m-9 dark:text-white' >{hour}:{minute}:{second}  {AmOrPm}</h2>
-      
     </div>
   )
 }
+export {
+  hour1,minutes1
+}
+export default Clock;
 
-export default Time
