@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 
-let hour1=0,minutes1=0;
 
 function Clock() {
   const[hour, setHour] = useState(0);
@@ -18,8 +17,6 @@ function Clock() {
    setHour(hours);
    setMinute(d.getMinutes());
    setSecond(d.getSeconds());
-   hour1=hour;
-   minutes1=minute;
    setAmOrPm(duration);
   }, 1000);
 
@@ -30,8 +27,6 @@ function Clock() {
     </div>
   )
 }
-export {
-  hour1,minutes1
-}
+
 export default Clock;
 
