@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import { GoPlus } from 'react-icons/go';
-
+import sound from './hogwards.mp3'
 
 function Alarm() {
 
@@ -10,41 +10,38 @@ function Alarm() {
   // const [clockMin, setClockMin] = useState(0);
   const [value, setValue] = useState('Set');
 
+   const ringAlarm=()=>{
+    let audio = new Audio(sound);
+        audio.autoplay = true;
+        audio.play();
+   }
+
   function setAlarm() {
     setValue('Done');
-    hr=parseInt(hr);
-    min=parseInt(min);
+    hr = parseInt(hr);
+    min = parseInt(min);
     let d;
-    let h1,m1;
-    setInterval(() => {
-      
-     
-      d=new Date();
-      m1=d.getMinutes();
-      h1=d.getHours();
-      if(hr===h1 && min===m1){
-        // let source= "hogwards.mp3";
-        // var audio=new Audio();
-        // audio.src=source;
-        // audio.autoplay=true;
-        // audio.play();
-        console.log("Ringing");
+    let h1, m1;
+
+   const check= setInterval(() => {
+      d = new Date();
+      m1 = d.getMinutes();
+      h1 = d.getHours();
+      if (hr === h1 && min === m1) {
+        clearInterval(check);
+        ringAlarm();
       }
     }, 1000);
   }
 
 
 
-  const setTime=(props)=>{
-    // console.log(props.target.value.substr(3,5));
-      setHr(props.target.value.substr(0,2));
-      setMin(props.target.value.substr(3,5));
-      
-      var audio=new Audio("hogwards.mp3");
-      audio.autoplay=true;
-      console.log(audio);
-      audio.play();
-       
+  const setTime = (props) => {
+    setHr(props.target.value.substr(0, 2));
+    setMin(props.target.value.substr(3, 5));
+
+
+
   }
 
   return (
