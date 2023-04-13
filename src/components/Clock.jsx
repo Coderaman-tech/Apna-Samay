@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
-
+import Working from '../animations/working.json';
+import Lottie from "lottie-react";
 
 function Clock() {
   const[hour, setHour] = useState(0);
@@ -21,10 +22,24 @@ function Clock() {
   }, 1000);
 
   return (
-    <div>
+    // <div className='lex justify-center items-center'>
+    //   <h1 className='text-sky-600 text-5xl c-slate-500'>Digital Clock</h1>
+    //   <h2 className='text-4xl m-9 dark:text-white' >{hour}:{minute}:{second}  {AmOrPm}</h2>
+  
+    // </div>
+    <>
+    <div className=''>
+        <Lottie style={{ height: 500}} animationData={Working} className='' />
+      </div>
+      
+    <div className='lex justify-center items-center'>
+      
+    <div className='text-center object-right' >
       <h1 className='text-sky-600 text-5xl c-slate-500'>Digital Clock</h1>
-      <h2 className='text-4xl m-9 dark:text-white' >{hour}:{minute}:{second}  {AmOrPm}</h2>
+      <h2 className='text-4xl m-9 dark:text-white'>{hour}:{minute}:{second} {AmOrPm}</h2>
     </div>
+  </div>
+  </>
   )
 }
 

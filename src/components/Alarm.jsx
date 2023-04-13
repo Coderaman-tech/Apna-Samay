@@ -30,6 +30,7 @@ function Alarm() {
       if (hr === h1 && min === m1) {
         clearInterval(check);
         ringAlarm();
+        setValue('Set');
       }
     }, 1000);
   }
@@ -45,16 +46,23 @@ function Alarm() {
   }
 
   return (
-    <div className='m-x-5'>
-      <h1 className='text-5xl text-sky-600 '>Alarm</h1>
-      {/* <div className='sign m-9'>
-        <GoPlus className="icon" size="30px" color='green' />
-      </div> */}
-      <div className='m-9'>
-        <input type="time" name="" id="time" onChange={setTime} className='text-4xl' />
-        <input type="submit" value={value} className='text-2xl m-x-4' onClick={setAlarm} />
+    // <div className='m-x-5'>
+    //   <h1 className='text-5xl text-sky-600 '>Alarm</h1>
+      
+    //   <div className='m-9'>
+    //     <input type="time" name="" id="time" onChange={setTime} className='text-4xl' />
+    //     <input type="submit" value={value} className='text-2xl m-x-4' onClick={setAlarm} />
+    //   </div>
+    // </div>
+    <div className='flex justify-center items-center h-screen'>
+    <div className='mx-5'>
+      <h1 className='text-5xl text-sky-600'>Alarm</h1>
+      <div className='my-9 flex flex-col items-center'>
+        <input type='time' name='time' id='time' onChange={setTime} className='text-5xl w-full text-slate-950' />
+        <input type='submit' value={value} className='text-3xl m-4' onClick={setAlarm} />
       </div>
     </div>
+  </div>
   )
 }
 
